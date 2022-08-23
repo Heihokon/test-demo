@@ -1,34 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { FlagshipProvider } from '@flagship.io/react-sdk';
+import { Container } from 'react-bootstrap'
+import Menu from './components/Menu';
+import { Routes, Route, useSearchParams } from "react-router-dom";
+import { routesList } from './constants/routesList';
+import Index from './pages';
+
 
 function App() {
 
-  const params = new URL(window.location).searchParams;
-  const envId = params.get('envId');
-  const apiKey = params.get('apiKey')
+  let [searchParams] = useSearchParams();
+  const envId = searchParams.get('envId');
+  const apiKey = searchParams.get('apiKey')
 
   return (
     <FlagshipProvider
       envId={envId}
       apiKey={apiKey}
     >
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Menu />
+      <Container fluid="md">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {
+            routesList.map((item, index) => (<Route key={index} path={item.path} element={<item.element />} />))
+          }
+        </Routes>
+      </Container>
     </FlagshipProvider>
 
   );
