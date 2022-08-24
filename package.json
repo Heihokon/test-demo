@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://heihokon.github.io",
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.18.10",
     "@flagship.io/react-sdk": "^3.0.9",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -42,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.18.10",
     "sass": "^1.54.4"
   }
 }
