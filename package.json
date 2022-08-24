@@ -2,7 +2,7 @@
   "name": "demo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://heihokon.github.io/test-demo/",
+  "homepage": "https://heihokon.github.io",
   "dependencies": {
     "@flagship.io/react-sdk": "^3.0.9",
     "@testing-library/jest-dom": "^5.14.1",
