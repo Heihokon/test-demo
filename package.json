@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "update": "yarn add @flagship.io/react-sdk",
+    "build": "yarn update && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
